@@ -30,7 +30,7 @@ public class ReadingListController {
         }
         return "readingList";
     }
-    @RequestMapping(value = "/reader",method = RequestMethod.POST)
+    @RequestMapping(value = "/{reader}",method = RequestMethod.POST)
     public String addToReadingList(@PathVariable("reader") String reader,Book book){
         book.setReader(reader);
         readingListRepository.save(book);
